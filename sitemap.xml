@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aiwanxia.github.io/2017/03/05/%E5%88%9D%E8%AF%86hexo%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2017-03-05T15:15:54.766Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://aiwanxia.github.io/categories/index.html</loc>
     
     <lastmod>2017-03-05T09:17:36.329Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://aiwanxia.github.io/2017/03/05/never-give-up/</loc>
     
     <lastmod>2017-03-05T02:59:57.857Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aiwanxia.github.io/2017/03/05/hello-world/</loc>
-    
-    <lastmod>2017-03-05T02:39:36.204Z</lastmod>
     
   </url>
   
