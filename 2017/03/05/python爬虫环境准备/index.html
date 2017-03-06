@@ -16,12 +16,14 @@
   
   
   
-    <meta name="description" content="#一.什么是爬虫    网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。
-打开一个网页，里面有网页内容吧，想象一下，有个工具，可以把网页上的内容获取下来，存到你想要的地方，这个工具就是我们今天的主角：爬虫。
-这样是不是更清晰了呢？
-既然了...">
+    <meta name="description" content="#1.安装Python
+安装完了记得配置环境，将python目录和python目录下的Scripts目录添加到系统环境变量的Path里。在cmd中输入python如果出现版本信息说明配置完毕（如下面截图）。[python][1]![][2]
+
+#Python爬虫小白入门（二）requests库
+
+一、运行环境    1.Windows10    可以是linux,mac,安装找百度。    ...">
   
-  <title>初识python爬虫 [ shiny-boy ]</title>
+  <title>python爬虫环境准备 [ shiny-boy ]</title>
   
     <link rel="alternate" href="/atom.xml" title="shiny-boy">
   
@@ -43,23 +45,14 @@
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2017/03/05/never-give-up/">
+      <a href="/2017/03/05/python爬虫入门(一)/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        never give up
+        初识python爬虫
       </div>
     </div>
   
-  
-    <div class="item next">
-      <a href="/2017/03/05/python爬虫环境准备/">
-        <div class="item-icon"></div>
-      </a>
-      <div class="item-title">
-        python爬虫环境准备
-      </div>
-    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -132,7 +125,7 @@
       
       
   <article id="post">
-    <h1>初识python爬虫</h1>
+    <h1>python爬虫环境准备</h1>
     <p class="page-title-sub">
       <span id = "post-title-date">撰写于 2017-03-05</span>
       
@@ -152,18 +145,58 @@
       
     </p>
     
-    <p>#一.什么是爬虫<br>    <a href="http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB" target="_blank" rel="external">网络爬虫</a>（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
-<p>打开一个网页，里面有网页内容吧，想象一下，有个工具，可以把网页上的内容获取下来，存到你想要的地方，这个工具就是我们今天的主角：爬虫。</p>
-<p>这样是不是更清晰了呢？</p>
-<p>既然了解了爬虫是什么，那么爬虫是如何爬取数据的呢？</p>
-<p>#二.爬虫是哪里爬取数据的<br>    鼠标在页面上点击右键，然后点击view page source。看到这些文字了吗？这才是网页最赤果果的样子。<a href="http://upload-images.jianshu.io/upload_images/3879861-32b85a59ff142691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6226699" target="_blank" rel="external">网页</a></p>
-<pre><code>其实所有的网页都是HTML代码，只不过浏览器将这些代码解析成了上面的网页，我们的小爬虫抓取的其实就是HTML代码中的文本啦。
-</code></pre><p>这不合理啊，难不成那些图片也是文本？</p>
-<p>恭喜你，答对了。回到浏览器中有图的哪个tab页，鼠标右键，点击Inspect。会弹出一个面板，点击板左上角的箭头，点击虐狗图片，你会看到下面有红圈圈的地方，是图片的网络地址。图片可以通过该地址保存到本地哦。<br>    你猜的没错，我们的小爬虫抓取的正是网页中的数据，你要知道你想要抓取什么数据，你的目标网站是什么，才可以把想法变成现实的哦。你不能说，我想要这个这个，还有这个，然后数据就自动来了。</p>
-<p>#四、学习爬虫的必备知识</p>
-<p> 1.HTML<br>这个能够帮助你了解网页的结构，内容等。可以参考W3School的教程。</p>
-<p>2.Python<br>如果有编程基础的小伙伴儿，推荐看一个廖雪峰的Python教程就够了<br>没有编程基础的小伙伴，推荐看看视频教程（网易云课堂搜Python），然后再结合廖雪峰的教程，双管齐下。<br>其实知乎上总结的已经非常好了，我就不多唠叨了。知乎-如何系统的自学Python</p>
-<p>3.TCP/IP协议，HTTP协议<br>这些知识能够让你了解在网络请求和网络传输上的基本原理，了解就行，能够帮助今后写爬虫的时候理解爬虫的逻辑。<br>廖雪峰Python教程里也有简单介绍，可以参考：TCP/IP简介，HTTP协议<br>想更深入学习的小伙伴儿可以去网上多搜搜相关的书籍哦</p>
+    <p>#1.安装Python</p>
+<pre><code>安装完了记得配置环境，将python目录和python目录下的Scripts目录添加到系统环境变量的Path里。在cmd中输入python如果出现版本信息说明配置完毕（如下面截图）。[python][1]![][2]
+</code></pre><hr>
+<p>#Python爬虫小白入门（二）requests库</p>
+<hr>
+<p><strong>一、运行环境</strong><br>    1.Windows10<br>    可以是linux,mac,安装找百度。<br>    2.Python2.7<br>    推荐使用Anaconda这个科学计算版本，主要是因为它自带一个包管理工具，可以解决有些包安装错误的问题。去<a href="https://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>官网，选择Python2.7版本，然后下载安装。<br>    3.IDE<br>    我使用的是PyCharm，是专门为Python开发的IDE。这是JetBrians的产品，<a href="http://www.jetbrains.com/pycharm/" target="_blank" rel="external">点我下载</a>。</p>
+<hr>
+<p>#二、requests 库的安装<br>使用Anaconda 版本的得小伙伴儿：用管理员权限运行cmd命令窗口，然后输入</p>
+<pre><code>conda install requests
+</code></pre><p>看动图：<img src="http://upload-images.jianshu.io/upload_images/3879861-0a6ce29c80c5e143.gif?imageMogr2/auto-orient/strip&amp;_=6230337" alt="此处输入图片的描述"><br>直接使用Python2.7的小伙伴儿输入这个命令：</p>
+<pre><code>pip install requests
+
+requests库安装完毕，接下来我们会在实际例子中演示它的使用。想要深入了解requests模块的小伙伴也可以仔细阅读[英文官方文档][6]，和[中文官方文档][7]，如果用到该文没有提到的功能，则查看文档即可。
+</code></pre><hr>
+<p>#三、开工<br>首先我们打开PyCharm，需要选择一下它的页面主题。选择你喜欢的风格，以及选择使用的Python版本。然后打开一个你想要存放爬虫的目录，进入后长这样。<img src="http://upload-images.jianshu.io/upload_images/3879861-3741f3912aee5d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>我们再创建一个python文件，输入第一行代码来导入requests库：</p>
+<pre><code>import requests #导入requests库
+</code></pre><p>然后用它来获取咱们的目标网页：</p>
+<p><code>r = requests.get(&#39;https://unsplash.com&#39;)</code> <code>#像目标url地址发送get请求，返回一个response对象</code></p>
+<pre><code>print(r.text) #r.text是http response的网页HTML
+</code></pre><p>在菜单栏点击“Run”，选择该文件（或者直接在窗口中点击右键，运行该文件）：<br><img src="http://upload-images.jianshu.io/upload_images/3879861-fb8084241e041148.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>执行完之后，底部会出现输出结果：<br><img src="http://upload-images.jianshu.io/upload_images/3879861-3852bc7e0aa06509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>可以看到底部是获取到的网页内容。这就完成了爬虫的第一步，获取到了网页的HTML内容。<br>怎么样，很简单吧。</p>
+<p>这只是用到了requests库的get请求，还有其他的请求使用也与之类似。下面我们简单介绍一下每个请求的用法。</p>
+<hr>
+<p>#四、requests库的使用<br>因为有中文的官方文档，我就不介绍所有的功能了，只把常用到的说一下，大家用到更多功能的时候再去翻官方文档吧。</p>
+<p>requests 库就是用来发送各种请求的，所以，我们就来看看各种请求怎么使用：</p>
+<p><strong>4.1 get 请求</strong></p>
+<pre><code>r = requests.get(&quot;https://unsplash.com&quot;)
+</code></pre><p>这就是我们刚刚用到的。其实就是向网站发送了一个get请求，然后网站会返回一个response。r 就是response。大家可以在运行的时候查看r的type。</p>
+<pre><code>print(type(r))![此处输入图片的描述][11]
+get请求还可以传递参数：
+
+payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;}
+
+r = requests.get(&quot;http://httpbin.org/get&quot;, params=payload)
+上面代码向服务器发送的请求中包含了两个参数key1和key2，以及两个    参数的值。实际上它构造成了如下网址：
+</code></pre><p><a href="http://httpbin.org/get?key1=value1&amp;key2=value2" target="_blank" rel="external">http://httpbin.org/get?key1=value1&amp;key2=value2</a></p>
+<p><strong>4.2 POST请求</strong></p>
+<p>无参数的post请求：</p>
+<pre><code>r = requests.post(&quot;http://httpbin.org/post&quot;)
+</code></pre><p>有参数的post请求：</p>
+<pre><code>payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;}
+
+r = requests.post(&quot;http://httpbin.org/post&quot;, data=payload)
+</code></pre><p>post请求多用来提交表单数据，即填写一堆输入框，然后提交。</p>
+<p><strong>4.3 其他请求</strong></p>
+<p>其他一些请求例如put请求、delete请求、head请求、option请求等其实都是类似的。但是平时用的不多，就不仔细介绍了。有用到的可以去看官网文档哦。阅读官方文档是必备技能！</p>
+<pre><code>r = requests.put(&quot;http://httpbin.org/put&quot;)
+r = requests.delete(&quot;http://httpbin.org/delete&quot;)
+r = requests.head(&quot;http://httpbin.org/get&quot;)
+r = requests.options(&quot;http://httpbin.org/get&quot;)
+</code></pre><hr>
+<p>五、后语<br>我们刚才用requests库发送http请求获得了网页的HTML内容，那么应该如何从HTML中获得图片呢？</p>
+<p>BeautifulSoup库就此登场啦，赶快去看一下篇来了解它的用法吧。</p>
 
   </article>
   <div class="random-toc-area">
@@ -178,13 +211,11 @@
   
 <nav id="pagination">
   
-    <a href="/2017/03/05/never-give-up/" class="prev">&larr; 上一篇 never give up</a>
+    <a href="/2017/03/05/python爬虫入门(一)/" class="prev">&larr; 上一篇 初识python爬虫</a>
   
 
   
 
-  
-    <a href="/2017/03/05/python爬虫环境准备/" class="next">下一篇 python爬虫环境准备 &rarr;</a>
   
 </nav>
 

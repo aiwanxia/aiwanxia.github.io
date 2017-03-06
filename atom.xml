@@ -302,4 +302,78 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     
   </entry>
   
+  <entry>
+    <title>python爬虫环境准备</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/python%E7%88%AC%E8%99%AB%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/python爬虫环境准备/</id>
+    <published>2017-03-05T02:58:52.000Z</published>
+    <updated>2017-03-06T14:29:34.712Z</updated>
+    
+    <content type="html"><![CDATA[<p>#1.安装Python</p>
+<pre><code>安装完了记得配置环境，将python目录和python目录下的Scripts目录添加到系统环境变量的Path里。在cmd中输入python如果出现版本信息说明配置完毕（如下面截图）。[python][1]![][2]
+</code></pre><hr>
+<p>#Python爬虫小白入门（二）requests库</p>
+<hr>
+<p><strong>一、运行环境</strong><br>    1.Windows10<br>    可以是linux,mac,安装找百度。<br>    2.Python2.7<br>    推荐使用Anaconda这个科学计算版本，主要是因为它自带一个包管理工具，可以解决有些包安装错误的问题。去<a href="https://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>官网，选择Python2.7版本，然后下载安装。<br>    3.IDE<br>    我使用的是PyCharm，是专门为Python开发的IDE。这是JetBrians的产品，<a href="http://www.jetbrains.com/pycharm/" target="_blank" rel="external">点我下载</a>。</p>
+<hr>
+<p>#二、requests 库的安装<br>使用Anaconda 版本的得小伙伴儿：用管理员权限运行cmd命令窗口，然后输入</p>
+<pre><code>conda install requests
+</code></pre><p>看动图：<img src="http://upload-images.jianshu.io/upload_images/3879861-0a6ce29c80c5e143.gif?imageMogr2/auto-orient/strip&amp;_=6230337" alt="此处输入图片的描述"><br>直接使用Python2.7的小伙伴儿输入这个命令：</p>
+<pre><code>pip install requests
+
+requests库安装完毕，接下来我们会在实际例子中演示它的使用。想要深入了解requests模块的小伙伴也可以仔细阅读[英文官方文档][6]，和[中文官方文档][7]，如果用到该文没有提到的功能，则查看文档即可。
+</code></pre><hr>
+<p>#三、开工<br>首先我们打开PyCharm，需要选择一下它的页面主题。选择你喜欢的风格，以及选择使用的Python版本。然后打开一个你想要存放爬虫的目录，进入后长这样。<img src="http://upload-images.jianshu.io/upload_images/3879861-3741f3912aee5d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>我们再创建一个python文件，输入第一行代码来导入requests库：</p>
+<pre><code>import requests #导入requests库
+</code></pre><p>然后用它来获取咱们的目标网页：</p>
+<p><code>r = requests.get(&#39;https://unsplash.com&#39;)</code> <code>#像目标url地址发送get请求，返回一个response对象</code></p>
+<pre><code>print(r.text) #r.text是http response的网页HTML
+</code></pre><p>在菜单栏点击“Run”，选择该文件（或者直接在窗口中点击右键，运行该文件）：<br><img src="http://upload-images.jianshu.io/upload_images/3879861-fb8084241e041148.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>执行完之后，底部会出现输出结果：<br><img src="http://upload-images.jianshu.io/upload_images/3879861-3852bc7e0aa06509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6230337" alt="此处输入图片的描述"><br>可以看到底部是获取到的网页内容。这就完成了爬虫的第一步，获取到了网页的HTML内容。<br>怎么样，很简单吧。</p>
+<p>这只是用到了requests库的get请求，还有其他的请求使用也与之类似。下面我们简单介绍一下每个请求的用法。</p>
+<hr>
+<p>#四、requests库的使用<br>因为有中文的官方文档，我就不介绍所有的功能了，只把常用到的说一下，大家用到更多功能的时候再去翻官方文档吧。</p>
+<p>requests 库就是用来发送各种请求的，所以，我们就来看看各种请求怎么使用：</p>
+<p><strong>4.1 get 请求</strong></p>
+<pre><code>r = requests.get(&quot;https://unsplash.com&quot;)
+</code></pre><p>这就是我们刚刚用到的。其实就是向网站发送了一个get请求，然后网站会返回一个response。r 就是response。大家可以在运行的时候查看r的type。</p>
+<pre><code>print(type(r))![此处输入图片的描述][11]
+get请求还可以传递参数：
+
+payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;}
+
+r = requests.get(&quot;http://httpbin.org/get&quot;, params=payload)
+上面代码向服务器发送的请求中包含了两个参数key1和key2，以及两个    参数的值。实际上它构造成了如下网址：
+</code></pre><p><a href="http://httpbin.org/get?key1=value1&amp;key2=value2" target="_blank" rel="external">http://httpbin.org/get?key1=value1&amp;key2=value2</a></p>
+<p><strong>4.2 POST请求</strong></p>
+<p>无参数的post请求：</p>
+<pre><code>r = requests.post(&quot;http://httpbin.org/post&quot;)
+</code></pre><p>有参数的post请求：</p>
+<pre><code>payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;}
+
+r = requests.post(&quot;http://httpbin.org/post&quot;, data=payload)
+</code></pre><p>post请求多用来提交表单数据，即填写一堆输入框，然后提交。</p>
+<p><strong>4.3 其他请求</strong></p>
+<p>其他一些请求例如put请求、delete请求、head请求、option请求等其实都是类似的。但是平时用的不多，就不仔细介绍了。有用到的可以去看官网文档哦。阅读官方文档是必备技能！</p>
+<pre><code>r = requests.put(&quot;http://httpbin.org/put&quot;)
+r = requests.delete(&quot;http://httpbin.org/delete&quot;)
+r = requests.head(&quot;http://httpbin.org/get&quot;)
+r = requests.options(&quot;http://httpbin.org/get&quot;)
+</code></pre><hr>
+<p>五、后语<br>我们刚才用requests库发送http请求获得了网页的HTML内容，那么应该如何从HTML中获得图片呢？</p>
+<p>BeautifulSoup库就此登场啦，赶快去看一下篇来了解它的用法吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#1.安装Python&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;安装完了记得配置环境，将python目录和python目录下的Scripts目录添加到系统环境变量的Path里。在cmd中输入python如果出现版本信息说明配置完毕（如下面截图）。[python][1]![][2]
+&lt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
 </feed>
