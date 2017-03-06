@@ -236,6 +236,38 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
   </entry>
   
   <entry>
+    <title>初识python爬虫</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8(%E4%B8%80)/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/python爬虫入门(一)/</id>
+    <published>2017-03-05T02:58:52.000Z</published>
+    <updated>2017-03-06T13:01:41.890Z</updated>
+    
+    <content type="html"><![CDATA[<p>#一.什么是爬虫<br>    <a href="http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB" target="_blank" rel="external">网络爬虫</a>（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
+<p>打开一个网页，里面有网页内容吧，想象一下，有个工具，可以把网页上的内容获取下来，存到你想要的地方，这个工具就是我们今天的主角：爬虫。</p>
+<p>这样是不是更清晰了呢？</p>
+<p>既然了解了爬虫是什么，那么爬虫是如何爬取数据的呢？</p>
+<p>#二.爬虫是哪里爬取数据的<br>    鼠标在页面上点击右键，然后点击view page source。看到这些文字了吗？这才是网页最赤果果的样子。<a href="http://upload-images.jianshu.io/upload_images/3879861-32b85a59ff142691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6226699" target="_blank" rel="external">网页</a></p>
+<pre><code>其实所有的网页都是HTML代码，只不过浏览器将这些代码解析成了上面的网页，我们的小爬虫抓取的其实就是HTML代码中的文本啦。
+</code></pre><p>这不合理啊，难不成那些图片也是文本？</p>
+<p>恭喜你，答对了。回到浏览器中有图的哪个tab页，鼠标右键，点击Inspect。会弹出一个面板，点击板左上角的箭头，点击虐狗图片，你会看到下面有红圈圈的地方，是图片的网络地址。图片可以通过该地址保存到本地哦。<br>    你猜的没错，我们的小爬虫抓取的正是网页中的数据，你要知道你想要抓取什么数据，你的目标网站是什么，才可以把想法变成现实的哦。你不能说，我想要这个这个，还有这个，然后数据就自动来了。</p>
+<p>#四、学习爬虫的必备知识</p>
+<p> 1.HTML<br>这个能够帮助你了解网页的结构，内容等。可以参考W3School的教程。</p>
+<p>2.Python<br>如果有编程基础的小伙伴儿，推荐看一个廖雪峰的Python教程就够了<br>没有编程基础的小伙伴，推荐看看视频教程（网易云课堂搜Python），然后再结合廖雪峰的教程，双管齐下。<br>其实知乎上总结的已经非常好了，我就不多唠叨了。知乎-如何系统的自学Python</p>
+<p>3.TCP/IP协议，HTTP协议<br>这些知识能够让你了解在网络请求和网络传输上的基本原理，了解就行，能够帮助今后写爬虫的时候理解爬虫的逻辑。<br>廖雪峰Python教程里也有简单介绍，可以参考：TCP/IP简介，HTTP协议<br>想更深入学习的小伙伴儿可以去网上多搜搜相关的书籍哦</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#一.什么是爬虫&lt;br&gt;    &lt;a href=&quot;http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网络爬虫&lt;/a&gt;（又被称为网页
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初识hexo命令</title>
     <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%9D%E8%AF%86hexo%E5%91%BD%E4%BB%A4/"/>
     <id>https://aiwanxia.github.io/2017/03/05/初识hexo命令/</id>
