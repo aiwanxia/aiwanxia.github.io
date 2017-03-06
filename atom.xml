@@ -30,13 +30,181 @@
   </entry>
   
   <entry>
-    <title>利用hexo与nodejs搭建博客</title>
+    <title></title>
     <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8hexo%E4%B8%8Enodejs%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>https://aiwanxia.github.io/2017/03/05/利用hexo与nodejs搭建博客/</id>
     <published>2017-03-05T03:31:21.000Z</published>
-    <updated>2017-03-05T03:31:21.638Z</updated>
+    <updated>2017-03-06T02:08:27.656Z</updated>
+    
+    <content type="html"><![CDATA[<p>我一直都想要拥有一个属于自己的博客，写下自己的无聊，偶然的机会，我在网上看到了一篇文章，教你如何用20min搭建一个属于自己的博客，看到这，我心动了，并且开始按照他的指示操作起来，就这样20多min后，我也拥有了属于自己的博客，成就感十足，现在，让我来带大家搭建一个属于自己的博客！</p>
+<ol>
+<li><p><strong>这个是我一边写这篇教程一边搭建的。所以如果你也和我一样，喜欢自由，喜欢捣腾，那就来吧。</strong></p>
+</li>
+<li><p><strong>系统：windows 7 64位，编辑器：sublime text3，控制台：cmder</strong></p>
+</li>
+<li><p><strong>搭建博客使用hexo+Github</strong></p>
+</li>
+</ol>
+<p><img src="https://pic2.zhimg.com/v2-d67939b68c7a3f2515e3a9c26744f5b1_b.jpg" alt="简易的博客框架"></p>
+<h2 id="什么是hexo文档"><a href="#什么是hexo文档" class="headerlink" title="什么是hexo文档"></a><strong>什么是hexo<a href="https://link.zhihu.com/?target=https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a></strong></h2><ol>
+<li>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://link.zhihu.com/?target=http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li>
+</ol>
+<p>#一. 配置github<br>首先注册、登录 <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
+<p>记住自己的Username（很重要）</p>
+<p>然后右上角选择 Create a new repository  <a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a></p>
+<p>Repository name 填自己的名字  <a href="http://yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了" target="_blank" rel="external">http://yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了</a>)</p>
+<p>例如，我的域名是<a href="http://github.com/aiwanxia，就填入http://aiwanxia.github.io。成功后出现下面的画面![github注册成功图][4" target="_blank" rel="external">http://github.com/aiwanxia，就填入http://aiwanxia.github.io。成功后出现下面的画面![github注册成功图][4</a>]</p>
+<p>#二.环境安装</p>
+<ol>
+<li>安装 Node.js<a href="https://link.zhihu.com/?target=https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
+</ol>
+<ol>
+<li>安装 Git<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">git下载地址</a>（<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">git</a>教程这里有廖雪峰老师的教程，非常好）</li>
+<li>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的<img src="https://pic2.zhimg.com/v2-3d2da2b383ea2e014f9c669998e65d55_b.jpg" alt="输入自己username和Email"></li>
+<li><strong>安装 Hexo</strong>。所有必备的应用程序安装完成后，即可使用 <strong>npm</strong> 安装 <strong>Hexo</strong>。<br><code>$ npm install -g hexo-cli</code><br>成功之后如图显示<img src="https://pic4.zhimg.com/v2-aec3ab5c2ba1fd9299bab1b8fbfdc6bb_b.jpg" alt="cmder"><br>（使用的<a href="http://cmder.net/" target="_blank" rel="external">cmder</a>，一款可以在windows系统下使用Linux命令的工具）</li>
+</ol>
+<p>好了到这一步我们环境全部安装好了</p>
+<p>#三.创建自己的blog目录<br>在电脑任意目录下新建文件夹 blog，进入blog，按住Shift键点击鼠标右键,选择 “git bash here”<br>输入<code>hexo init blog</code>（初始化hexo）<br>速度有点慢,成功提示为</p>
+<pre><code>INFO  Start blogging with Hexo!
+</code></pre><p>因为你初始化hexo 之后source目录下自带一篇hello world文章, 所以直接执行下方命令<br><code>$ hexo generate</code><br><strong>启动本地服务器</strong></p>
+<p> <code>$ hexo server</code></p>
+<p>在浏览器输入 <a href="http://localhost:4000/就可以看见网页和模板了" target="_blank" rel="external">http://localhost:4000/就可以看见网页和模板了</a><br>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. Press Ctrl+C to stop.<br><img src="https://pic4.zhimg.com/v2-8dc21d8652e725fe700aa085e061d057_b.jpg" alt="本地博客"><br>重新打开git，输入：<br> <code>ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</code><br> 一路Enter过来就好，得到信息：<br> <code>Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub</code><br> 找到该文件，打开（sublime text），Ctrl + a复制里面的所有内容，然后进入<a href="https://github.com/settings/keys" target="_blank" rel="external">Sign in to GitHub</a>:</p>
+<pre><code>New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key
+</code></pre><p>#四、配置博客<br>在blog\blog目录下，用sublime打开_config.yml文件，修改参数信息</p>
+<pre><code># Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+# Site #站点信息
+title:  #标题
+subtitle:  #副标题
+description:  #站点描述，给搜索引擎看的
+author:  #作者
+email:  #电子邮箱
+language: zh-CN #语言
+# URL #链接格式
+url:  #网址
+root: / #根目录
+permalink: :year/:month/:day/:title/ #文章的链接格式
+tag_dir: tags #标签目录
+archive_dir: archives #存档目录
+category_dir: categories #分类目录
+code_dir: downloads/code
+permalink_defaults:
+# Directory #目录
+source_dir: source #源文件目录
+public_dir: public #生成的网页文件目录
+# Writing #写作
+new_post_name: :title.md #新文章标题
+default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）
+titlecase: false #标题转换成大写
+external_link: true #在新选项卡中打开连接
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+highlight: #语法高亮
+  enable: true #是否启用
+  line_number: true #显示行号
+  tab_replace:
+# Category &amp; Tag #分类和标签
+default_category: uncategorized #默认分类
+category_map:
+tag_map:
+# Archives
+2: 开启分页
+1: 禁用分页
+0: 全部禁用
+archive: 2
+category: 2
+tag: 2
+# Server #本地服务器
+port: 4000 #端口号
+server_ip: localhost #IP 地址
+logger: false
+logger_format: dev
+# Date / Time format #日期时间格式
+date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/
+time_format: H:mm:ss
+# Pagination #分页
+per_page: 10 #每页文章数，设置成 0 禁用分页
+pagination_dir: page
+# Disqus #Disqus评论，替换为多说
+disqus_shortname:
+# Extensions #拓展插件
+theme: landscape-plus #主题
+exclude_generator:
+plugins: #插件，例如生成 RSS 和站点地图的
+- hexo-generator-feed
+- hexo-generator-sitemap
+# Deployment #部署，将 lmintlcx 改成用户名
+deploy:
+  type: git
+  repo: 刚刚github创库地址.git
+  branch: master
+</code></pre><p><strong>特别提醒，在每个参数的：后都要加一个空格</strong></p>
+<p><em>其中我们需要修改的信息为：</em></p>
+<pre><code>title: （你自己想）
+subtitle: 副标题
+description: 网页描述
+author: （你自己的笔名或其他的，随便填）
+language: zh-CN
+timezone: Asia/Shanghai
+</code></pre><p><em>配置部署（修改成自己的）</em><br>最后那里<br>deploy:<br>  type: git<br>  repo: 用ssh那个 例：git@github.com:aiwanxia/aiwanxia.github.io.git<br>  branch: master</p>
+<p>#五.发表文章</p>
+<ol>
+<li><p><strong>在git中输入</strong></p>
+<p> $ hexo new “崔斯特测试文章”<br>会出现 INFO  Created: F:\test\blog\source_posts\崔斯特测试文章.md</p>
+<p>找到该文章，打开，使用Markdown语法，该语法介绍可以查看<a href="https://zhangslob.github.io/2017/02/26/%E5%88%A9%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">利用HEXO搭建的博客</a>及Markdown语法介绍</p>
+<pre><code>---
+title: 崔斯特测试文章
+date: 2017-02-28 13:03:44
+tags:
+---
+</code></pre><p>保存，然后执行下列步骤：<br>\blog\blog<br>$ hexo clean<br>INFO  Deleted database.<br>INFO  Deleted public folder.</p>
+</li>
+</ol>
+<pre><code> \blog\blog
+    $ hexo generate
+    INFO  Start processing
+    INFO  Files loaded in 1.48 s
+    #省略
+    INFO  29 files generated in 4.27 s
+
+\blog\blog
+$ hexo server
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+
+这个时候，打开http://localhost:4000/，发现刚才的文章已经成功了
+
+最后一步，发布到网上，执行：
+</code></pre><p>  \blog\blog<br>     <code>$ hexo deploy</code><br>    INFO  Deploying: git<br>    INFO  Clearing .deploy_git folder…<br>    INFO  Copying files from public folder…</p>
+<pre><code>#省略
+
+如果发现deploy没有的话，请使用命令
+ `npm install hexo-deployer-git --save `
+</code></pre><p>#六、总结<br>发布文章的步骤：</p>
+<p>1、hexo new 创建文章</p>
+<p>2、Markdown语法编辑文章</p>
+<p>3、部署（所有打开CMD都是在blog目录下）</p>
+<p><code>hexo clean #清除缓存 网页正常情况下可以忽略此条命令</code><br><code>hexo generate #生成</code><br><code>hexo server #启动服务预览，非必要，可本地浏览网页</code><br><code>hexo deploy #部署发布</code></p>
+<p>也可以简写为：<br><code>hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</code><br><code>hexo p == hexo publish</code><br><code>hexo g == hexo generate#生成</code><br><code>hexo s == hexo server #启动服务预览</code><br><code>hexo d == hexo deploy#部署</code></p>
+<p>如果在执行 hexo deploy 后,出现 error deployer not found:github 的错误，执行：<br><code>npm install hexo-deployer-git --save</code></p>
+<p>到这里已经完成了博客的搭建，但是还有很多需要设置和调整的。这是我的博客，也许你会发现，我和刚才搭建的不一样，因为我修改了博客主题，简洁、优美。<a href="https://aiwanxia.github.io/index.html">博客样式</a></p>
+<p>#七.主题安装<br>主题安装</p>
+<p>hexo的主题列表Hexo Themes。<br><strong>个人推荐的主题</strong><br><a href="https://github.com/forsigner/fexo" target="_blank" rel="external">fexo</a> ——这是一个极简的主题，喜欢简洁的可以看看。<br><a href="https://github.com/stiekel/hexo-theme-random/blob/master/README.CN.md" target="_blank" rel="external">random</a>——这个是我现在正在使用的主题，自定义的轮播图看起来很好。<br><a href="https://github.com/SuperKieran/TKL" target="_blank" rel="external">TKL</a>——这个主题是我那个报废的博客用的，一个优雅的响应式主题。<br><a href="https://github.com/SuperKieran/TKL" target="_blank" rel="external">yilia</a>——优雅简洁响应式主题。<br>下面的安装以random为例<br>在你的博客根目录里，执行如下的命令：</p>
+<p><code>git clone https://github.com/stiekel/hexo-theme-random.git themes/random</code><br>然后修改博客的主配置文件，将主题设置为random</p>
+<p>升级</p>
+<p><code>cd themes/random</code><br><code>git pull</code><br>成功<br>最后在使用命令上传，ok!<br><code>hexo g -d</code><br>打开 username(你的注册名字).github.io,则可看到自己的博客！例如：<code>aiwanxia.github.io</code></p>
+<p>==========================分割线===============================</p>
+<p>2017年3月6日更新：主题推荐</p>
+<p>NexT主题 开始使用<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">- NexT 使用文档</a> </p>
+<p>点击查看<a href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8hexo%E4%B8%8Enodejs%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">教你免费搭建个人博客，Hexo&amp;Github</a></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;我一直都想要拥有一个属于自己的博客，写下自己的无聊，偶然的机会，我在网上看到了一篇文章，教你如何用20min搭建一个属于自己的博客，看到这，我心动了，并且开始按照他的指示操作起来，就这样20多min后，我也拥有了属于自己的博客，成就感十足，现在，让我来带大家搭建一个属于自己
     
     </summary>
     
@@ -62,15 +230,14 @@
     <link href="https://aiwanxia.github.io/2017/03/05/never-give-up/"/>
     <id>https://aiwanxia.github.io/2017/03/05/never-give-up/</id>
     <published>2017-03-05T02:58:52.000Z</published>
-    <updated>2017-03-05T02:59:57.857Z</updated>
+    <updated>2017-03-06T02:11:31.741Z</updated>
     
-    <content type="html"><![CDATA[<p>hello,welcome to my personal blog!</p>
+    <content type="html"><![CDATA[<p>hello,welcome to my personal blog!<br>搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令<code>npm install -g hexo-cli</code>安装的是最新版本，所以会常常出错，但是，never give up,只要你愿意找，你始终会找到答案的，相信自己可以的，不要放弃，下面我给大家讲讲搭建博客时的一些坑，及如何解决！</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;hello,welcome to my personal blog!&lt;/p&gt;
-
+      &lt;p&gt;hello,welcome to my personal blog!&lt;br&gt;搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;安装的是最新版本，所以会常常出错，但是，ne
     
     </summary>
     
