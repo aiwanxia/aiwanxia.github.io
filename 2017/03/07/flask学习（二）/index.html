@@ -1,8 +1,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,9 @@
   
   
   
-    <meta name="description" content="always be shiny!">
+    <meta name="description" content="Flask 中的线程局部变量¶Flask 的设计抉择之一就是让简单的任务保持简单；它们的实现不应采用大量的代码， 并且不应对你做出限制。为此，我们选择了一些可能让某些人觉得惊讶或异端的设计。例如，Flask 内部使用线程局部的对象，这样你不必在请求内的函数间传递对象来保证线程安全。这个方法很方便，但为了实现依赖注入，或尝试重用含有与请求挂钩的值的代码之时，需要一个有效的请求环境（Reques...">
   
-  <title>标签: python [ shiny-boy ]</title>
+  <title>flask学习（二） [ shiny-boy ]</title>
   
     <link rel="alternate" href="/atom.xml" title="shiny-boy">
   
@@ -41,6 +39,24 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2017/03/07/flask入门(1)/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        初识flask（一）
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/03/07/flask学习(安装)/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        flask学习（三--安装）
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -73,7 +89,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/tags">Tags</a>
             
@@ -112,373 +128,66 @@
     <div id="content-inner">
       
       
-  <div id="tag">
-    <h1>python</h1>
-    
+  <article id="post">
+    <h1>flask学习（二）</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-03-07</span>
+      
+        <span id = "post-title-updated">修改于 2017-03-07</span>
+      
+      
+      
+      <span id = "post-title-tags">
+      标签
       
       
         
-      
-      
-    
-      
-      
         
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/利用python进行暴力破解密码/">
-  
-    利用python进行暴力破解密码
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/python爬虫入门(一)/">
-  
-    初识python爬虫
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/05/python爬虫环境准备/">
-  
-    python爬虫环境准备
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-5</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/flask入门(1)/">
-  
-    初识flask（一）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/Flask Web开发学习笔记（一）/">
-  
-    Flask Web开发学习笔记（一）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/django/">
-  
-    django框架开发学习笔记（一）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/flask学习（前言）/">
-  
-    flask学习（前言）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/flask学习(安装)/">
-  
-    flask学习（三--安装）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2017/03/07/flask学习（二）/">
-  
-    flask学习（二）
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">3-7</span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/python/">python</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
+        <a href="/tags/python/">python</a>
+      
+      </span>
+      
+    </p>
+    
+    <p><strong>Flask 中的线程局部变量¶</strong><br>Flask 的设计抉择之一就是让简单的任务保持简单；它们的实现不应采用大量的代码， 并且不应对你做出限制。为此，我们选择了一些可能让某些人觉得惊讶或异端的设计。例如，Flask 内部使用线程局部的对象，这样你不必在请求内的函数间传递对象来保证线程安全。这个方法很方便，但为了实现依赖注入，或尝试重用含有与请求挂钩的值的代码之时，需要一个有效的请求环境（Request Context）。</p>
+<p><strong>Web 开发危机四伏<br>快乐码 Web，安全记心间。</strong></p>
+<p>你相当可能编写允许用户在你的服务器上注册并留下数据的 Web 应用。即便你是这唯一的用户，也会在应用中留下数据。用户们把数据托付给你，你当然更希望这些数据被妥善安全地保存。</p>
+<p>不幸的是，攻陷 Web 应用的手段五花八门。Flask 可保护你免受一个在现代 Web 应用中最常见的安全问题的困扰：跨站脚本攻击（XSS）。Flask 和底层的 Jinja2 模板引擎已经为你应付得足够好，除非你蓄意把不安全的 HTML 标记为安全。但仍有很多导致安全问题的可能。</p>
+<p>本文档会在 Web 开发中那些需要注意安全的方面警示你。一些安全上的顾虑远比人们想象的复杂，我们所有人都会有低估漏洞被利用的可能性的时候——直到一个精明的攻击者找出利用我们程序的方法。而且，不要侥幸认为你的应用没有重要到足够吸引攻击者。取决于攻击的类型，有时候会是自动化的僵尸机器来检测如何在你数据库中填充垃圾内容、恶意程序链接或之类东西。</p>
+<p>开发者必须在为需求编写代码时留心安全隐患，在这点上，Flask 与其它框架没有区别。</p>
+<p><strong>Python 3 的状态</strong><br>Python 社区目前处于改善库对 Python 新版本支持的进程中。而当前大力改进中的处境仍有一些问题，使得用户难以迁移到 Python 3 。这些问题一部分是因为长时间没有回顾语言中的变化，一部分也是因为我们没有找出低层 API 应该如何做出修改来适应 Python 3 中 Unicode 的变化。</p>
+<p>我们强烈建议在开发时使用 Python 2.6 和 2.7 ，并激活 Python 3 警告。如果你计划在近期升级到 Python 3 ，我们强烈推荐你阅读 如何编写向后兼容的 Python 代码 。</p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
     
   </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/03/07/flask入门(1)/" class="prev">&larr; 上一篇 初识flask（一）</a>
+  
 
   
 
+  
+    <a href="/2017/03/07/flask学习(安装)/" class="next">下一篇 flask学习（三--安装） &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      <div class="ds-thread" data-thread-key="2017/03/07/flask学习（二）/" data-title="flask学习（二）" data-url="https://aiwanxia.github.io/2017/03/07/flask学习（二）/"></div>
       
       
       
@@ -496,6 +205,18 @@
 </div>
 
 </div>
+
+  <script type="text/javascript">
+var duoshuoQuery = {short_name:"aiwanxia"};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+   || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 
 
 
@@ -589,6 +310,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
