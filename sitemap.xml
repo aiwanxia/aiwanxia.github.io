@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aiwanxia.github.io/2017/03/07/django/</loc>
+    
+    <lastmod>2017-03-07T13:16:19.580Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://aiwanxia.github.io/2017/03/07/Flask%20Web%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2017-03-07T12:46:03.518Z</lastmod>
