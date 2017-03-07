@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aiwanxia.github.io/"/>
-  <updated>2017-03-06T13:26:12.600Z</updated>
+  <updated>2017-03-07T05:43:04.471Z</updated>
   <id>https://aiwanxia.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初识flask（一）</title>
+    <link href="https://aiwanxia.github.io/2017/03/07/flask%E5%85%A5%E9%97%A8(1)/"/>
+    <id>https://aiwanxia.github.io/2017/03/07/flask入门(1)/</id>
+    <published>2017-03-07T02:31:21.000Z</published>
+    <updated>2017-03-07T05:43:04.471Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先在学习flask之前，我们来了解一下什么是flask，在百度百科上我们知道：</p>
+<ul>
+<li>1</li>
+</ul>
+<p>Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。<br>Flask使用 BSD 授权。</p>
+<ol>
+<li><p>Flask也被称为 “microframework” ，因为它使用简单的核心，用 extension 增加其他功能。Flask没有默认使用的数据库、窗体验证工具。然而，Flask保留了扩增的弹性，可以用Flask-extension加入这些功能：ORM、窗体验证工具、文件上传、各种开放式身份验证技术。最新版本为0.11<br>Flask简单易学，下面是Flask版的hello world(hello.py):</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">from flask import Flask</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line">@app.route(&quot;/&quot;)</div><div class="line">def hello():    </div><div class="line">    return &quot;Hello World!&quot;</div><div class="line"> </div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run()</div><div class="line">安装flask即可运行了：</div><div class="line">$ pip install Flask</div><div class="line"> </div><div class="line">$ python</div><div class="line">hello.py* Running on http://localhost:5000/</div><div class="line"> </div><div class="line">*flask默认端口是5000</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先在学习flask之前，我们来了解一下什么是flask，在百度百科上我们知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Ji
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://aiwanxia.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>利用hexo与nodejs搭建博客</title>
